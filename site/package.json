@@ -1,0 +1,16 @@
+{
+  "name": "melvo-site",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Public Melvo marketing website (static).",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "start": "npx --yes serve ."
+  },
+  "devDependencies": {
+    "playwright": "^1.49.0",
+    "vitest": "^2.1.0"
+  }
+}
