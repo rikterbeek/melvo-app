@@ -1,0 +1,31 @@
+{
+  "$comment": "Agreed homepage performance budget (TASK-d72h6qnbgprt, AC6). Enforced by test/performance.test.ts against the production build in dist/.",
+  "network": {
+    "label": "Slow 4G",
+    "downlinkKbps": 1638,
+    "roundTripMs": 150,
+    "connectionSetupRoundTrips": 3,
+    "maxParallelRequests": 6
+  },
+  "loadTimeMs": {
+    "firstRender": 1500,
+    "fullyLoaded": 2500
+  },
+  "transferGzipBytes": {
+    "total": 102400,
+    "html": 20480,
+    "css": 16384,
+    "js": 10240,
+    "image": 30720,
+    "font": 0
+  },
+  "requests": {
+    "criticalPath": 6,
+    "total": 12
+  },
+  "rules": {
+    "maxRenderBlockingScripts": 0,
+    "maxRenderBlockingStylesheets": 1,
+    "maxWebFonts": 0
+  }
+}

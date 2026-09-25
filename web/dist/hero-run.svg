@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="640" height="480" role="img" aria-label="A Melvo run board showing one task moving through plan, build, test and review, ending in an open pull request.">
+  <defs>
+    <style>
+      .b{fill:#fff}
+      .l{fill:#f4f6fb}
+      .s{stroke:#d5dbe8;stroke-width:2;fill:none}
+      .t{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:14px;fill:#4b5468}
+      .h{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:15px;font-weight:700;fill:#11151f}
+      .k{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:12px;font-weight:700;fill:#1b45c4}
+    </style>
+  </defs>
+  <rect width="640" height="480" rx="16" class="b"/>
+  <rect x="0" y="0" width="640" height="56" rx="16" fill="#0d1220"/>
+  <rect x="0" y="40" width="640" height="16" fill="#0d1220"/>
+  <circle cx="28" cy="28" r="6" fill="#9db9ff"/>
+  <text x="48" y="33" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="15" font-weight="700" fill="#f5f7fc">Run · TASK-4821 · Rate-limit the export API</text>
+
+  <g>
+    <rect x="24" y="84" width="592" height="72" rx="12" class="l"/>
+    <rect x="24" y="84" width="592" height="72" rx="12" class="s"/>
+    <circle cx="56" cy="120" r="14" fill="#1b45c4"/>
+    <path d="M50 120l4 4 8-8" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="84" y="114" class="h">Plan</text>
+    <text x="84" y="136" class="t">Requirements and acceptance criteria written</text>
+    <text x="536" y="126" class="k">DONE</text>
+  </g>
+
+  <g>
+    <rect x="24" y="172" width="592" height="72" rx="12" class="l"/>
+    <rect x="24" y="172" width="592" height="72" rx="12" class="s"/>
+    <circle cx="56" cy="208" r="14" fill="#1b45c4"/>
+    <path d="M50 208l4 4 8-8" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="84" y="202" class="h">Build</text>
+    <text x="84" y="224" class="t">14 files changed, tests written first</text>
+    <text x="536" y="214" class="k">DONE</text>
+  </g>
+
+  <g>
+    <rect x="24" y="260" width="592" height="72" rx="12" class="l"/>
+    <rect x="24" y="260" width="592" height="72" rx="12" class="s"/>
+    <circle cx="56" cy="296" r="14" fill="#1b45c4"/>
+    <path d="M50 296l4 4 8-8" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="84" y="290" class="h">Test</text>
+    <text x="84" y="312" class="t">96 passed · 0 failed · coverage 96 %</text>
+    <text x="536" y="302" class="k">GREEN</text>
+  </g>
+
+  <g>
+    <rect x="24" y="348" width="592" height="104" rx="12" fill="#e6edff"/>
+    <rect x="24" y="348" width="592" height="104" rx="12" stroke="#1b45c4" stroke-width="2" fill="none"/>
+    <circle cx="56" cy="384" r="14" fill="#1b45c4"/>
+    <path d="M56 377v14M50 384h12" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="84" y="378" class="h">Pull request #312 opened</text>
+    <text x="84" y="400" class="t">Waiting for review by your team</text>
+    <rect x="84" y="414" width="150" height="26" rx="13" fill="#1b45c4"/>
+    <text x="104" y="432" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="13" font-weight="700" fill="#fff">Review changes</text>
+  </g>
+</svg>
