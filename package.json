@@ -1,0 +1,18 @@
+{
+  "name": "melvo-settings",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Melvo organization configuration and applications.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "pretest": "npm --prefix melvo-app install --no-audit --no-fund",
+    "test": "npm --prefix melvo-app test",
+    "pretest:coverage": "npm --prefix melvo-app install --no-audit --no-fund",
+    "test:coverage": "npm --prefix melvo-app run test:coverage",
+    "typecheck": "npm --prefix melvo-app run typecheck",
+    "precheck": "npm --prefix melvo-app install --no-audit --no-fund",
+    "check": "npm --prefix melvo-app run check"
+  }
+}
