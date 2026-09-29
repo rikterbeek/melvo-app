@@ -1,0 +1,35 @@
+:root {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page__main {
+  flex: 1;
+  padding: 1rem;
+}
+
+.page__header,
+.page__footer {
+  padding: 1rem;
+  border-color: #e0e0e0;
+  border-style: solid;
+  border-width: 0;
+}
+
+.page__header {
+  border-bottom-width: 1px;
+}
+
+.page__footer {
+  border-top-width: 1px;
+}
