@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Melvo Labs — Home</title>
+    <meta
+      name="description"
+      content="Melvo Labs home screen: a responsive, accessible starting point for the product."
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="/">Melvo&nbsp;Labs</a>
+        <nav aria-label="Primary">
+          <ul class="nav-list">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="container">
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title">Ship software your whole team can trust</h1>
+        <p class="hero__lead">
+          Melvo Labs turns a task into reviewed, tested, shippable code — on every screen size, for
+          every user.
+        </p>
+        <p><a class="button" href="#features">Explore the platform</a></p>
+      </section>
+
+      <section id="features" aria-labelledby="features-title">
+        <h2 id="features-title">Features</h2>
+        <ul class="card-grid">
+          <li class="card">
+            <h3>Responsive by default</h3>
+            <p>Fluid layouts adapt from a 360&nbsp;px phone to a wide desktop with no sideways scroll.</p>
+          </li>
+          <li class="card">
+            <h3>Accessible by default</h3>
+            <p>Landmarks, ordered headings and visible focus states come built in, not bolted on.</p>
+          </li>
+          <li class="card">
+            <h3>Checked automatically</h3>
+            <p>Every build runs an automated accessibility scan so regressions never reach users.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section id="how-it-works" aria-labelledby="how-title">
+        <h2 id="how-title">How it works</h2>
+        <ol class="steps">
+          <li><h3>Describe the task</h3><p>Write what you need in plain language.</p></li>
+          <li><h3>Review the plan</h3><p>Requirements and architecture arrive before any code does.</p></li>
+          <li><h3>Merge with confidence</h3><p>Tests and reviews ship alongside the change.</p></li>
+        </ol>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">Contact</h2>
+        <p>Questions about the platform? <a href="mailto:hello@melvo.example">Email the team</a>.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2026 Melvo Labs. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
