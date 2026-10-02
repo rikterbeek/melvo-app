@@ -1,0 +1,10 @@
+{
+  "name": "hello-world-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Dependency-free static hello world page",
+  "scripts": {
+    "test": "node --test"
+  }
+}
