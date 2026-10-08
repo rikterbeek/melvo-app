@@ -1,0 +1,14 @@
+{
+  "name": "melvo-settings",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Repository root. The website lives in web/; these scripts delegate to it so the repo's tests and checks run from the root.",
+  "scripts": {
+    "install:web": "npm --prefix web install",
+    "build": "npm --prefix web run build",
+    "lint": "npm --prefix web run lint",
+    "typecheck": "npm --prefix web run typecheck",
+    "test": "npm --prefix web run test",
+    "check": "npm --prefix web run check"
+  }
+}

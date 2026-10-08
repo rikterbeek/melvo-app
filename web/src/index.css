@@ -1,0 +1,94 @@
+:root {
+  --ink: #16202b;
+  --ink-muted: #4a5a6a;
+  --accent: #1f6feb;
+  --surface: #ffffff;
+  --rule: #dde3ea;
+
+  color-scheme: light;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: var(--ink);
+  background: var(--surface);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.app {
+  margin: 0 auto;
+  max-width: 64rem;
+  padding: 0 1.5rem;
+}
+
+.app__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.app__brand {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.app__nav {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.app__nav a {
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+
+.app__nav a:hover,
+.app__nav a.active {
+  color: var(--accent);
+}
+
+.app__main {
+  padding: 3rem 0 4rem;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.9rem, 5vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.hero__summary {
+  max-width: 44rem;
+  margin: 0 0 2rem;
+  font-size: 1.125rem;
+  color: var(--ink-muted);
+}
+
+.hero__cta {
+  display: inline-block;
+  padding: 0.7rem 1.25rem;
+  border-radius: 0.5rem;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hero__cta:hover {
+  background: #1a5fd0;
+}
