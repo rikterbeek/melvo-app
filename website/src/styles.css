@@ -1,0 +1,67 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+}
+
+.layout {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 0.75rem;
+}
+
+.site-name {
+  font-weight: 600;
+  margin: 0;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a[aria-current='page'] {
+  font-weight: 600;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+  max-width: 28rem;
+}
+
+.field input,
+.field textarea {
+  font: inherit;
+  padding: 0.4rem;
+}
+
+.field textarea {
+  min-height: 6rem;
+}
+
+.field [aria-invalid='true'] {
+  outline: 2px solid #b3261e;
+}
+
+.field-error {
+  margin: 0;
+  color: #b3261e;
+  font-size: 0.875rem;
+}
