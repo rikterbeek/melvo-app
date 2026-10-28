@@ -1,0 +1,14 @@
+{
+  "name": "hello-world-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Single static HTML page (PRD-1 / RFC-1) plus the one authoritative deploy procedure for it.",
+  "scripts": {
+    "test": "node --test \"test/*.test.mjs\"",
+    "docs:sync": "node scripts/sync-docs.mjs",
+    "docs:check": "node scripts/sync-docs.mjs --check",
+    "record:deploy": "node scripts/record-deploy-url.mjs",
+    "check": "npm run docs:check && npm test"
+  }
+}

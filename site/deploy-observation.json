@@ -1,0 +1,9 @@
+{
+  "_comment": "Single source of truth for the deployed URL. Written only by scripts/record-deploy-url.mjs from a live response to a deploy run. Never hand-edit it, and never fill it in from the git remote: a URL in here is a claim that someone fetched it.",
+  "source": "not-yet-observed",
+  "canonicalUrl": null,
+  "finalUrl": null,
+  "httpStatus": null,
+  "observedAt": null,
+  "runUrl": null
+}
