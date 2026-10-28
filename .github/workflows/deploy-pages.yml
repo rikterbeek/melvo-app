@@ -1,0 +1,40 @@
+name: Deploy site to GitHub Pages
+
+# The only publish mechanism for this site. The Pages source must be set to
+# "GitHub Actions"; a branch source would be a second way to serve / (PRD-1 §6.1 FR-PAGE-3).
+on:
+  push:
+    branches: [main]
+    paths:
+      - site/**
+      - .github/workflows/deploy-pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys publish at once; always finish the newest one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/configure-pages@v5
+
+      # Only site/ is uploaded, so README.md, docs/ and skills/ are never served (PRD-1 §10 SEC-5).
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
