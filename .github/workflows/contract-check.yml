@@ -1,0 +1,18 @@
+name: contract check
+
+# RFC-1 §10: the page invariants must not silently regress. No toolchain setup
+# step — the check is POSIX shell + grep, so the runner's default image is enough.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check index.html contract
+        run: sh scripts/check-contract.sh
+      - name: Check the contract check itself
+        run: sh tests/check-contract.test.sh
