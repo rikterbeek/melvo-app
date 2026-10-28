@@ -1,0 +1,196 @@
+{
+  "generatedAt": "2026-10-28T22:25:24Z",
+  "date": "2026-10-28",
+  "url": "http://127.0.0.1:40819/",
+  "origin": "http://127.0.0.1:40819",
+  "browser": "HeadlessChrome/153.0.8010.0",
+  "artefactSha256": "a5038a2e48d6640bb9a18b98266c79ff60ad836fa055eff915530ec2b5e7b231",
+  "targetNote": "the committed artefact served by a static host over a real HTTP origin, which is the site reachable from the verification environment; no deployed URL was supplied to this run (RFC-1 T2)",
+  "summary": {
+    "desktopViewportPx": 1280,
+    "mobileViewportPx": 375,
+    "horizontalScrollingViewports": 0,
+    "smallestRenderedTextPx": 32,
+    "mobileLayoutViewportPx": 375,
+    "mobileVisualViewportScale": 1,
+    "consoleErrors": 0,
+    "pageAuthoredConsoleWarnings": 0,
+    "totalRequestsPerViewport": [
+      1,
+      1
+    ],
+    "requestsToOtherHosts": 0,
+    "hostInjectedScripts": 0,
+    "servedBytesIdenticalToRepoFile": true
+  },
+  "checks": [
+    {
+      "id": "CHK-1",
+      "requirement": "FR-SITE-1",
+      "title": "GET / returns 200 text/html and the page renders \"Hello, world!\"",
+      "result": "PASS",
+      "evidence": {
+        "httpStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "renderedBodyText": "Hello, world!"
+      },
+      "executed": true,
+      "executedAt": "2026-10-28T22:25:24Z"
+    },
+    {
+      "id": "CHK-2",
+      "requirement": "FR-CLIENT-3 / UI-4",
+      "title": "Renders legibly at 1280 px with no horizontal scrolling",
+      "result": "PASS",
+      "evidence": {
+        "viewportWidth": 1280,
+        "layoutViewportWidth": 1280,
+        "scrollWidth": 1280,
+        "clientWidth": 1280,
+        "horizontalScrollbar": false,
+        "smallestTextFontPx": 32,
+        "minLegiblePx": 16,
+        "zoomedOut": false,
+        "visualViewportScale": 1
+      },
+      "executed": true,
+      "executedAt": "2026-10-28T22:25:24Z"
+    },
+    {
+      "id": "CHK-3",
+      "requirement": "FR-CLIENT-3 / UI-4",
+      "title": "Renders legibly at 375 px with no horizontal scrolling",
+      "result": "PASS",
+      "evidence": {
+        "viewportWidth": 375,
+        "layoutViewportWidth": 375,
+        "scrollWidth": 375,
+        "clientWidth": 375,
+        "horizontalScrollbar": false,
+        "smallestTextFontPx": 32,
+        "minLegiblePx": 16,
+        "zoomedOut": false,
+        "visualViewportScale": 1
+      },
+      "executed": true,
+      "executedAt": "2026-10-28T22:25:24Z"
+    },
+    {
+      "id": "CHK-4",
+      "requirement": "FR-BROWSER-2",
+      "title": "Devtools console shows zero errors and zero page-authored warnings",
+      "result": "PASS",
+      "evidence": {
+        "errors": [],
+        "pageAuthoredWarnings": [],
+        "otherWarnings": [],
+        "allConsoleMessages": []
+      },
+      "executed": true,
+      "executedAt": "2026-10-28T22:25:24Z"
+    },
+    {
+      "id": "CHK-5",
+      "requirement": "FR-BROWSER-3",
+      "title": "Network panel shows exactly one request, to the site’s own origin",
+      "result": "PASS",
+      "evidence": {
+        "origin": "http://127.0.0.1:40819",
+        "perViewport": [
+          {
+            "viewport": "desktop",
+            "total": 1,
+            "documents": 1,
+            "external": [],
+            "requests": [
+              {
+                "url": "http://127.0.0.1:40819/",
+                "method": "GET",
+                "resourceType": "document"
+              }
+            ]
+          },
+          {
+            "viewport": "mobile",
+            "total": 1,
+            "documents": 1,
+            "external": [],
+            "requests": [
+              {
+                "url": "http://127.0.0.1:40819/",
+                "method": "GET",
+                "resourceType": "document"
+              }
+            ]
+          }
+        ]
+      },
+      "executed": true,
+      "executedAt": "2026-10-28T22:25:24Z"
+    },
+    {
+      "id": "CHK-6",
+      "requirement": "R5",
+      "title": "No host-injected script, analytics or third-party request in the rendered page",
+      "result": "PASS",
+      "evidence": {
+        "scriptElementsInRenderedDom": 0,
+        "iframesInRenderedDom": 0,
+        "externalUrlsInRenderedDom": [],
+        "externalRequests": [],
+        "servedBytesIdenticalToRepoFile": true,
+        "servedByteLength": 243
+      },
+      "executed": true,
+      "executedAt": "2026-10-28T22:25:24Z"
+    },
+    {
+      "id": "CHK-7",
+      "requirement": "FR-SITE-2",
+      "title": "Document basics as rendered: HTML5 doctype, UTF-8, non-empty title, lang",
+      "result": "PASS",
+      "evidence": {
+        "doctype": {
+          "name": "html",
+          "publicId": "",
+          "systemId": ""
+        },
+        "characterSet": "UTF-8",
+        "title": "Hello, world!",
+        "lang": "en"
+      },
+      "executed": true,
+      "executedAt": "2026-10-28T22:25:24Z"
+    },
+    {
+      "id": "CHK-8",
+      "requirement": "PRD §18 GA stage",
+      "title": "Independent second check from another network route and a cold browser",
+      "result": "PASS",
+      "executed": true,
+      "executedAt": "2026-10-28T22:25:24Z",
+      "evidence": {
+        "date": "2026-10-28",
+        "executedAt": "2026-10-28T22:25:24Z",
+        "origin": "http://172.19.0.3:36105",
+        "route": "the host’s external network interface (172.19.0.3), not the loopback address the first check used",
+        "browser": "HeadlessChrome/153.0.8010.0",
+        "result": "PASS",
+        "checksPassed": 7,
+        "checksTotal": 7,
+        "failures": []
+      }
+    }
+  ],
+  "independentCheck": {
+    "date": "2026-10-28",
+    "executedAt": "2026-10-28T22:25:24Z",
+    "origin": "http://172.19.0.3:36105",
+    "route": "the host’s external network interface (172.19.0.3), not the loopback address the first check used",
+    "browser": "HeadlessChrome/153.0.8010.0",
+    "result": "PASS",
+    "checksPassed": 7,
+    "checksTotal": 7,
+    "failures": []
+  }
+}
