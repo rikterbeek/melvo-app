@@ -1,0 +1,11 @@
+{
+  "name": "melvo-app-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Single static Hello World page published by GitHub Pages from site/ (PRD-1, RFC-1).",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "check": "node --check test/helpers/site.js && node --test test/*.test.js"
+  }
+}
