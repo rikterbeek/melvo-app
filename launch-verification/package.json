@@ -1,0 +1,13 @@
+{
+  "name": "launch-verification",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "PRD-1 §18 / RFC-1 §10 launch checklist verifier for the Hello World static site",
+  "bin": { "launch-verify": "src/cli.js" },
+  "scripts": {
+    "test": "node --test --experimental-test-coverage \"test/**/*.test.js\"",
+    "verify": "node src/cli.js"
+  },
+  "engines": { "node": ">=20" }
+}

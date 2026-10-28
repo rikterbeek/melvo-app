@@ -1,0 +1,23 @@
+{
+  "_comment": "Template for the browser-observable half of the PRD §18 checklist. Copy to evidence.json, fill in what you actually saw, then run: node src/cli.js --url <url> --evidence evidence.json --out ../docs/launch-verification-RFC-1.md",
+  "checker": "name of the person who ran the checks",
+  "_note_comment": "Optional free text carried verbatim into the record under \"Checker's note\" — browser and version, network used, anything a reader needs to judge the run.",
+  "note": "",
+  "browser": {
+    "_comment": "One entry per viewport. PRD §18 requires 375 px and at least 1280 px.",
+    "viewports": [
+      { "width": 375, "helloWorldVisible": false, "horizontalScroll": false },
+      { "width": 1280, "helloWorldVisible": false, "horizontalScroll": false }
+    ],
+    "consoleErrors": [],
+    "_requests_comment": "Every entry from the devtools network panel. A same-origin /favicon.ico 404 is exempt (PRD Q3); anything else beyond the document fails CHK-6.",
+    "requests": [{ "url": "https://<url>/", "status": 200 }]
+  },
+  "secondCheck": {
+    "_comment": "The GA gate: repeat from another device or network.",
+    "performed": false,
+    "network": "e.g. mobile tethering on a different phone",
+    "status": 0,
+    "helloWorldVisible": false
+  }
+}
