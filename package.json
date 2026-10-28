@@ -1,0 +1,11 @@
+{
+  "name": "hello-world-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Single static index.html served at / over HTTPS, plus the GitHub Pages deploy verifier (RFC-1).",
+  "scripts": {
+    "test": "node --test --experimental-test-coverage test/*.test.mjs",
+    "verify:deployment": "node scripts/verify-deployment-cli.mjs"
+  }
+}
