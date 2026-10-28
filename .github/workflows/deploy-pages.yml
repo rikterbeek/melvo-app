@@ -1,0 +1,68 @@
+name: Deploy to GitHub Pages
+
+# Single publisher for the site (RFC-1 §12 M0/M2). The Pages build-and-deployment source
+# must be set to "GitHub Actions" in Settings → Pages; no branch/`/docs` source in parallel.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time; never cancel a run that is already publishing.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Stage the publish directory
+        # The site is the repository root's index.html (ADR-001). Only the page is published.
+        run: |
+          mkdir -p _site
+          cp index.html _site/index.html
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  verify:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Observe the host-assigned URL and capture the evidence
+        env:
+          # The URL comes from the deploy job's own output — never derived from the git remote.
+          PAGE_URL: ${{ needs.deploy.outputs.page_url }}
+          RUN_CONCLUSION: success
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: node scripts/verify-deployment-cli.mjs | tee -a "$GITHUB_STEP_SUMMARY"
