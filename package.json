@@ -1,0 +1,15 @@
+{
+  "name": "melvo-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The single site repository for the Hello World static website (PRD-1). The published document is _site/index.html.",
+  "type": "module",
+  "license": "UNLICENSED",
+  "scripts": {
+    "test": "node --test \"test/**/*.test.js\"",
+    "check": "npm test"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
