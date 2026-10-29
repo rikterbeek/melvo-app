@@ -1,0 +1,11 @@
+$ node tools/verification/probe-deploy-capability.js
+FAIL  dns:api.github.com  — api.github.com did not resolve: EAI_AGAIN
+FAIL  https:api.github.com  — https://api.github.com/rate_limit unreachable: getaddrinfo EAI_AGAIN api.github.com
+FAIL  token:pages-administration-write  — no token in any of GITHUB_TOKEN, GH_TOKEN, GITHUB_PAT, PAGES_ADMIN_TOKEN, MELVO_GITHUB_TOKEN
+FAIL  cli:gh  — gh is not installed
+
+canObserveDeploy: false
+
+$ git remote -v
+origin	https://github.com/rikterbeek/melvo-app (fetch)
+origin	https://github.com/rikterbeek/melvo-app (push)
