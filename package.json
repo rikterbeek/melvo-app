@@ -1,0 +1,14 @@
+{
+  "name": "melvo-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Melvo configuration repository and the static site published from site/",
+  "scripts": {
+    "test": "vitest run",
+    "check": "vitest run"
+  },
+  "devDependencies": {
+    "vitest": "^5.0.5"
+  }
+}
