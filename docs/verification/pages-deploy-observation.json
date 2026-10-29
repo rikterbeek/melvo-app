@@ -1,0 +1,52 @@
+{
+  "task": "TASK-fsh4jn5nb3wa",
+  "title": "Enable GitHub Pages, run the deploy and observe the live HTTPS URL",
+  "repository": "rikterbeek/melvo-app",
+  "recordedAt": "2026-10-29T00:00:00Z",
+  "status": "blocked",
+  "satisfies": [],
+  "unmet": [
+    "PRD-1 §6.4 FR-DEPLOY-1",
+    "PRD-1 §10 SEC-1",
+    "STORY-52s0w4yffc7a AC1",
+    "STORY-52s0w4yffc7a AC6",
+    "RFC-1 §12 M0",
+    "RFC-1 §12 M2",
+    "RFC-1 §13 T1",
+    "RFC-1 §13 T2"
+  ],
+  "blockers": [
+    {
+      "capability": "Enable Pages with source = GitHub Actions",
+      "api": "POST /repos/rikterbeek/melvo-app/pages with {\"build_type\":\"workflow\"}",
+      "missing": "A GitHub token with the fine-grained repository permission \"Pages\": write (classic PAT equivalent: \"repo\" scope), held by a principal with admin access to rikterbeek/melvo-app. No token of any kind is present in this environment.",
+      "evidence": "node tools/verification/probe-deploy-capability.js → FAIL token:pages-administration-write — no token in any of GITHUB_TOKEN, GH_TOKEN, GITHUB_PAT, PAGES_ADMIN_TOKEN, MELVO_GITHUB_TOKEN (docs/verification/capability-probe.log)"
+    },
+    {
+      "capability": "Dispatch the deploy workflow on the default branch and read its run",
+      "api": "POST /repos/rikterbeek/melvo-app/actions/workflows/deploy-pages.yml/dispatches, then GET /repos/rikterbeek/melvo-app/actions/runs/{run_id}",
+      "missing": "A GitHub token with the fine-grained repository permission \"Actions\": write (dispatch) and read (run status). Not present.",
+      "evidence": "Same probe run; no token present. gh CLI is also absent: FAIL cli:gh — gh is not installed (docs/verification/capability-probe.log)"
+    },
+    {
+      "capability": "Observe the host-assigned HTTPS URL rather than derive it",
+      "api": "GET /repos/rikterbeek/melvo-app/pages → .html_url (or the deploy run's page_url output)",
+      "missing": "Outbound network access with DNS resolution for api.github.com. DNS resolution fails in this environment, so the host cannot be asked what URL it assigned.",
+      "evidence": "FAIL dns:api.github.com — api.github.com did not resolve: EAI_AGAIN; FAIL https:api.github.com — getaddrinfo EAI_AGAIN (docs/verification/capability-probe.log)"
+    },
+    {
+      "capability": "Capture GET / headers, the HTTP→HTTPS redirect and the certificate (SEC-1)",
+      "api": "GET https://<host-assigned-url>/ and GET http://<host-assigned-url>/",
+      "missing": "Outbound HTTPS (443) and HTTP (80) egress to the Pages host, plus the observed URL from the blocker above. Neither is available.",
+      "evidence": "No egress: all network probes failed with EAI_AGAIN (docs/verification/capability-probe.log)"
+    }
+  ],
+  "notDone": "No URL is recorded. The repository remote is https://github.com/rikterbeek/melvo-app, from which a Pages URL could be guessed, but a guessed URL is not an observation and this task explicitly forbids recording one.",
+  "readyToDeploy": {
+    "publishDocument": "index.html",
+    "workflow": ".github/workflows/deploy-pages.yml",
+    "workflowCount": 1,
+    "publishDirectories": ["."],
+    "verifiedBy": "npm test — the document, the single workflow and the single publish directory are asserted locally"
+  }
+}

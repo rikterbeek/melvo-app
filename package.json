@@ -1,0 +1,14 @@
+{
+  "name": "melvo-app-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Single static Hello, world! page (PRD-1 / RFC-1) plus its GitHub Pages deploy verification tooling.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "verify:capability": "node tools/verification/probe-deploy-capability.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
